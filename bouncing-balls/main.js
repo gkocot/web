@@ -24,6 +24,10 @@ function Ball(x, y, velX, velY, color, size) {
   this.size = size;
 }
 
+function BallV(p, v, color, size) {
+  return new Ball(p.x, p.y, v.x, v.y, color, size);
+}
+
 // define ball draw method
 
 Ball.prototype.draw = function() {
@@ -82,7 +86,7 @@ function loop() {
   ctx.fillStyle = 'rgba(0,0,0,0.25)';
   ctx.fillRect(0,0,width,height);
 
-  while(balls.length < 5) {
+  while(balls.length < 2*5) {
     var ball = new Ball(
       random(0,width),
       random(0,height),
@@ -91,6 +95,15 @@ function loop() {
       'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
       random(10,20)
     );
+	
+    balls.push(
+	  BallV(
+	    new Victor(random(0,width), random(0,height)),
+        new Victor(random(-7,7), random(-7,7)),	  
+        'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
+        random(10,20)
+      )
+	);
     balls.push(ball);
   }
 
