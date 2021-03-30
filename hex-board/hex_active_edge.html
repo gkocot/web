@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 0;
+                box-sizing: border-box;
+
+                /* DEBUG */
+                /* border-color: black;
+                border-width: 1px;
+                border-style: solid; */
+            }
+
+            body {
+                text-align: center;
+                margin-top: 100px;
+            }
+
+            .hex {
+                position: relative;
+                display: inline-block;
+                /* border-color: red; */
+            }
+
+            .hex:not(:first-child) {
+                margin-left: 50px;
+            }
+
+            .hex:nth-child(even) {
+                top: 87px;
+            }
+
+            .element {
+                position: relative;
+                display: inline-block;
+
+                width: 100px;
+                height: 87px;
+                clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+
+                /* DEBUG */
+                border-color: black;
+                border-top-width: 1px;
+                border-style: solid;
+            }
+
+            .element:hover {
+                border-color: red;
+                border-top-width: 5px;
+            }
+
+            .hex > .element:not(:first-child) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform-origin: bottom center;
+            }
+
+            .element:nth-child(2) {
+                transform: rotate(60deg);
+            }
+
+            .element:nth-child(3) {
+                transform: rotate(120deg);
+            }
+
+            .element:nth-child(4) {
+                transform: rotate(180deg);
+            }
+
+            .element:nth-child(5) {
+                transform: rotate(240deg);
+            }
+
+            .element:nth-child(6) {
+                transform: rotate(300deg);
+            }
+
+            .row {
+                margin-bottom: 86px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+        </div>
+        <div class="row">
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+        </div>
+        <div class="row">
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+            <div class="hex"><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div></div>
+        </div>
+    </body>
+
+    <script>
+    </script>
+</html>

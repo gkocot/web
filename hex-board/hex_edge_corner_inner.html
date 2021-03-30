@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 0;
+                box-sizing: border-box;
+
+                /* DEBUG */
+                /* border-color: black;
+                border-width: 1px;
+                border-style: solid; */
+            }
+
+            body {
+                text-align: center;
+                margin-top: 100px;
+            }
+
+            .hex {
+                position: relative;
+                display: inline-block;
+
+                /* DEBUG */
+                /* border-color: red;
+                border-width: 1px;                
+                border-style: solid; */
+            }
+
+            .hex:not(:first-child) {
+                margin-left: 67px; /* element width / 2 + height of the corner triangle */
+            }
+
+            .hex:nth-child(even) {
+                top: 97px; /* element height + height of the edge / 2 */
+            }
+
+            .hex .element {
+                position: relative;
+                display: inline-block;
+
+                width: 100px;
+                height: 87px; /* 0.866 * width */
+                /* clip-path: polygon(0% 0%, 100% 0%, 50% 100%); */
+
+                /* DEBUG */
+                /* border-color: black;
+                border-width: 1px;                
+                border-style: solid; */
+            }
+
+            .hex > .element:not(:first-child) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform-origin: bottom center;                
+            }
+
+            .element:nth-child(2) {
+                transform: rotate(60deg);
+            }
+
+            .element:nth-child(3) {
+                transform: rotate(120deg);
+            }
+
+            .element:nth-child(4) {
+                transform: rotate(180deg);
+            }
+
+            .element:nth-child(5) {
+                transform: rotate(240deg);
+            }
+
+            .element:nth-child(6) {
+                transform: rotate(300deg);
+            }
+
+            .element .edge {
+                position: absolute;
+                width: 100px;
+                height: 20px;
+                top: 0;
+                left: 0;
+                background-color: green;
+                transform: translate(0px, -20px);
+
+                /* DEBUG */
+                /* border-color: green;
+                border-width: 1px;                
+                border-style: solid; */
+            }
+
+            .element .corner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform-origin: top left;
+
+                width: 20px;
+                height: 17px; /* 0.866 * width */
+                background-color: blue;
+                clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+
+                /* DEBUG */
+                /* border-color: black;
+                border-width: 1px;                
+                border-style: solid; */
+
+                transform: translate(100px, -20px) rotate(30deg)
+            }
+
+            .element *:hover {
+                background-color: red;
+            }
+
+            .row {
+                margin-bottom: 107px; /* element height + edge height */
+
+                /* DEBUG */
+                /* border-color: black;
+                border-width: 1px;                
+                border-style: solid; */
+            }
+
+            .hex .inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 100px;
+                transform: translate(0, 36px); /* 2 * element height - height / 2 */
+
+                /* DEBUG */
+                /* border-color: black;
+                border-width: 1px;                
+                border-style: solid; */
+            }
+
+            .hex .inner:hover {
+                background-color: red;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+            <div class="hex">
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="element"><div class="edge"></div><div class="corner"></div></div>
+                <div class="inner"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+    </script>
+</html>
