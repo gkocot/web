@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .videobox {
+                text-align: center;
+                margin: 10px;
+            }
+
+            .status .start,
+            .status .current,
+            .status .end {
+               display: inline-block;
+               width: 30%;
+            }
+
+            video {
+                height: 200px;
+            }
+
+            #video_playback {
+                display: none;
+            }
+
+        </style>    
+    </head>
+
+    <body>
+        <video autoplay muted id="video_live"></video>
+        <video muted id="video_playback"></video>
+        
+        <div class="status">
+            <div class="current">0</div>        
+        </div>
+        
+        <button id="button_back">Back</button>
+        <button id="button_play">Play</button>
+        <button id="button_pause">Pause</button>
+        <button id="button_forward">Forward</button>
+
+        <script src="videoclient.js"></script>
+    </body>
+</html>
