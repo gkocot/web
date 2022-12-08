@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            text-align: center;
+        }
+        video {
+            height: 200px;
+        }
+    </style>    
+</head>
+
+<body>
+    <div>
+        <div>
+            <div>Source</div>
+            <video autoplay controls id="video_source"></video>
+        </div>
+        <div>
+            <div>Captured</div>
+            <video autoplay id="video_captured"></video>
+        </div>
+    </div>
+
+    <div>
+        <button id="button_camera">Video From Camera</button>
+        <button id="button_file">Video From Files</button>
+        <button id="button_send">Send Video</button>
+    </div>
+
+    <script src="videosource.js"></script>
+</body>
+</html>

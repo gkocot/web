@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .videobox {
+                text-align: center;
+                margin: 10px;
+            }
+
+            .status .start,
+            .status .current,
+            .status .end {
+               display: inline-block;
+               width: 30%;
+            }
+
+            video {
+                height: 400px;
+            }
+
+        </style>    
+    </head>
+
+    <body>
+        <div id="live" class="videobox">
+            <video autoplay controls></video>
+            <div class="status">
+                <div class="current">0</div>
+            </div>
+            <div class="buttons">
+                <button id="btn_file">File (MediaSource)</button>
+                <button id="btn_camera">Camera (MediaStream)</button>
+            </div>
+        </div>
+
+        <div id="recorded" class="videobox">
+            <video controls></video>
+            <div class="status">
+                <div class="start">0</div>
+                <div class="current">0</div>
+                <div class="end">0</div>
+            </div>
+            <div class="buttons">
+                <button id="btn_back">Back</button>
+                <button id="btn_start_recording">Start Recording</button>
+                <button id="btn_stop_recording">Stop Recording</button>
+                <button id="btn_forward">Forward</button>
+            </div>
+        </div>
+
+        <script src="client.js"></script>
+    </body>
+</html>

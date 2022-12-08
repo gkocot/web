@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        video {
+            height: 200px;
+        }
+
+        #video_playback {
+            display: none;
+        }
+
+    </style>    
+</head>
+
+<body>
+    <div>
+        <video autoplay muted id="video_live"></video>
+        <video muted id="video_playback"></video>
+    </div>   
+    
+    <div>
+        <button id="button_back">Back</button>
+        <button id="button_play">Play</button>
+        <button id="button_pause">Pause</button>
+        <button id="button_forward">Forward</button>
+    </div>
+    
+    <script src="videoclient.js"></script>
+</body>
+
+</html>
